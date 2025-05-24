@@ -25,36 +25,4 @@ pokedex = {
         {'nome': 'Sobble', 'info': 'Sobble é um Pokémon do tipo Água da oitava geração. Ele é tímido e possui habilidades de camuflagem.'},
         {'nome': 'Quaxly', 'info': 'Quaxly é um Pokémon do tipo Água da nona geração. Ele tem um estilo calmo e elegante, com grande habilidade em natação.'},
     ],
-      'grass': [
-        {'nome': 'Bulbasaur', 'info': 'Bulbasaur é um Pokémon do tipo Planta/Veneno da primeira geração. Ele tem uma planta crescendo em suas costas e pode atacar com ela.'},
-        {'nome': 'Chikorita', 'info': 'Chikorita é um Pokémon do tipo Planta da segunda geração. Ela tem uma folha grande na cabeça e é muito amigável.'},
-        {'nome': 'Treecko', 'info': 'Treecko é um Pokémon do tipo Planta da terceira geração. Ele é ágil e capaz de se mover rapidamente pelas árvores.'},
-        {'nome': 'Turtwig', 'info': 'Turtwig é um Pokémon do tipo Planta da quarta geração. Sua carapaça de tortuga está cheia de energia e pode gerar raízes fortes.'},
-        {'nome': 'Snivy', 'info': 'Snivy é um Pokémon do tipo Planta da quinta geração. Ele é rápido e possui um estilo elegante e estratégico.'},
-        {'nome': 'Chespin', 'info': 'Chespin é um Pokémon do tipo Planta da sexta geração. Ele tem uma casca espinhosa e é muito protetor.'},
-        {'nome': 'Rowlet', 'info': 'Rowlet é um Pokémon do tipo Planta/Voador da sétima geração. Ele é uma coruja com grandes olhos e muito silencioso.'},
-        {'nome': 'Grookey', 'info': 'Grookey é um Pokémon do tipo Planta da oitava geração. Ele é muito travesso e adora bater em troncos com seu bastão.'},
-        {'nome': 'Sprigatito', 'info': 'Sprigatito é um Pokémon do tipo Planta da nona geração. Ele é um felino com grande agilidade e habilidades naturais em camuflagem.'},
-    ],
-    'extra': [
-        {'nome': 'Pokébola', 'info': 'A Pokébola é usada para capturar e armazenar Pokémon. Você a joga em um Pokémon selvagem após enfraquecê-lo.'},
-        {'nome': 'Poção', 'info': 'A Poção recupera o HP do seu Pokémon durante ou fora das batalhas. Muito útil em jornadas longas!'},
-        {'nome': 'TM', 'info': 'Os TMs são máquinas técnicas em forma de disco, usadas para ensinar golpes aos Pokémon. '},
-        {'nome': 'Revive', 'info': 'Revive é um item que ressuscita um Pokémon desmaiado com metade de seu HP.'},
-        {'nome': 'Bicicleta', 'info': 'A Bicicleta permite que você se mova mais rapidamente pelo mapa. Ideal para viagens longas!'},
-        {'nome': 'Rare Candy', 'info': 'O Rare Candy aumenta o nível do seu Pokémon instantaneamente. Um atalho para evoluções!'}
-    ]
-} 
-#Função para mostrar pokémons da tipagem escolhida :O
-def mostrar_geracoes(tipo):
-~    limpar_tela()
-~    label_info.config(text=f"Gerações do tipo {tipo.capitalize()}")
-~
-~    for i, pokemon in enumerate(pokedex[tipo][:9]):
-~        nome = pokemon['nome'] if isinstance(pokemon, dict) else pokemon
-~        botao = tk.Button(janela, text=f"G{i+1} - {nome}", width=30,
-~                          command=lambda n=nome: perguntar_info(n))
-~        botao.pack(pady=2)
-~
-~    botao_voltar = tk.Button(janela, text="Voltar ao início", bg="purple", fg="white", width=20, command=voltar_ao_inicio)
-~    botao_voltar.pack(pady=5)
+    
