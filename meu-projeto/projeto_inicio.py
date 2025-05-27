@@ -45,6 +45,7 @@ pokedex = {
         {'nome': 'Rare Candy', 'info': 'O Rare Candy aumenta o nível do seu Pokémon instantaneamente. Um atalho para evoluções!'}
     ]
 } 
+
 #Função para mostrar pokémons da tipagem escolhida :O
 def mostrar_geracoes(tipo):
 ~    limpar_tela()
@@ -58,3 +59,16 @@ def mostrar_geracoes(tipo):
 ~
 ~    botao_voltar = tk.Button(janela, text="Voltar ao início", bg="purple", fg="white", width=20, command=voltar_ao_inicio)
 ~    botao_voltar.pack(pady=5)
+
+#Itens extras
+def mostrar_extras():
+    limpar_tela()
+    label_info.config(text="Itens Extras da Pokédex")
+
+    for i, item in enumerate(pokedex['extra']):
+        nome = item['nome']
+        botao = tk.Button(janela, text=nome, width=30, command=lambda n=nome: perguntar_info(n))
+        botao.pack(pady=2)
+
+    botao_voltar = tk.Button(janela, text="Voltar ao início", bg="purple", fg="white", width=20, command=voltar_ao_inicio)
+    botao_voltar.pack(pady=5)
