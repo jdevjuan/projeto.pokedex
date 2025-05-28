@@ -72,3 +72,14 @@ def mostrar_extras():
 
     botao_voltar = tk.Button(janela, text="Voltar ao início", bg="purple", fg="white", width=20, command=voltar_ao_inicio)
     botao_voltar.pack(pady=5)
+    #Pergunta se deseja saber mais
+def perguntar_info(pokemon):
+    resposta = messagebox.askyesno("Quer saber mais?", f"Deseja saber as informações sobre {pokemon}?")
+    if resposta:
+        for tipo in ['fire', 'water', 'grass', 'extra']:
+            for p in pokedex[tipo]:
+                if isinstance(p, dict) and p['nome'] == pokemon:
+                    messagebox.showinfo(pokemon, p['info'])
+                    return
+    else:
+        messagebox.showinfo("Mistério...", "Sem spoilers, né? Tudo bem, o mistério fica no ar!")
