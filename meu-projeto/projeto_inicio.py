@@ -83,3 +83,9 @@ def perguntar_info(pokemon):
                     return
     else:
         messagebox.showinfo("Mistério...", "Sem spoilers, né? Tudo bem, o mistério fica no ar!")
+        
+#limpa os widgets da janela
+def limpar_tela():
+    for widget in janela.winfo_children():
+        if widget not in [label_titulo, label_info]:
+            widget.destroy()
