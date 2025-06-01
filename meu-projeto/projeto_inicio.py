@@ -89,3 +89,16 @@ def limpar_tela():
     for widget in janela.winfo_children():
         if widget not in [label_titulo, label_info]:
             widget.destroy()
+     #Função para voltar ao inícioAdd commentMore actions
+def voltar_ao_inicio():
+    limpar_tela()
+    label_info.config(text=">>> Escolha uma Tipagem <<<")
+    for tipo in ['fire', 'water', 'grass']:
+        cor = {'fire': 'red', 'water': 'blue', 'grass': 'green'}[tipo]
+        btn = tk.Button(janela, text=tipo.capitalize(), bg=cor, fg='white', width=20,
+                        command=lambda t=tipo: mostrar_geracoes(t))
+        btn.pack(pady=5)
+
+    #Botão extra na cor dourada
+    botao_extra = tk.Button(janela, text="Extras", bg="#F4B400", fg="black", width=20, command=mostrar_extras)
+    botao_extra.pack(pady=5)
