@@ -48,17 +48,17 @@ pokedex = {
 
 #Função para mostrar pokémons da tipagem escolhida :O
 def mostrar_geracoes(tipo):
-~    limpar_tela()
-~    label_info.config(text=f"Gerações do tipo {tipo.capitalize()}")
-~
-~    for i, pokemon in enumerate(pokedex[tipo][:9]):
-~        nome = pokemon['nome'] if isinstance(pokemon, dict) else pokemon
-~        botao = tk.Button(janela, text=f"G{i+1} - {nome}", width=30,
-~                          command=lambda n=nome: perguntar_info(n))
-~        botao.pack(pady=2)
-~
-~    botao_voltar = tk.Button(janela, text="Voltar ao início", bg="purple", fg="white", width=20, command=voltar_ao_inicio)
-~    botao_voltar.pack(pady=5)
+    limpar_tela()
+    label_info.config(text=f"Gerações do tipo {tipo.capitalize()}")
+
+    for i, pokemon in enumerate(pokedex[tipo][:9]):
+        nome = pokemon['nome'] if isinstance(pokemon, dict) else pokemon
+        botao = tk.Button(janela, text=f"G{i+1} - {nome}", width=30,
+                          command=lambda n=nome: perguntar_info(n))
+        botao.pack(pady=2)
+
+    botao_voltar = tk.Button(janela, text="Voltar ao início", bg="purple", fg="white", width=20, command=voltar_ao_inicio)
+    botao_voltar.pack(pady=5)
 
 #Itens extras
 def mostrar_extras():
@@ -89,7 +89,8 @@ def limpar_tela():
     for widget in janela.winfo_children():
         if widget not in [label_titulo, label_info]:
             widget.destroy()
-     #Função para voltar ao inícioAdd commentMore actions
+
+     #Função para voltar ao início
 def voltar_ao_inicio():
     limpar_tela()
     label_info.config(text=">>> Escolha uma Tipagem <<<")
@@ -102,3 +103,20 @@ def voltar_ao_inicio():
     #Botão extra na cor dourada
     botao_extra = tk.Button(janela, text="Extras", bg="#F4B400", fg="black", width=20, command=mostrar_extras)
     botao_extra.pack(pady=5)
+
+    #Janela principal
+janela = tk.Tk()
+janela.title("Pokédex Iniciante")
+janela.geometry("400x600")
+
+label_titulo = tk.Label(janela, text=">>> Bem-vindo à sua Pokédex Iniciante <<<", font=("Helvetica", 14, "bold"))
+label_titulo.pack(pady=10)
+
+label_info = tk.Label(janela, text=">>> Escolha uma Tipagem <<<", font=("Helvetica", 12))
+label_info.pack(pady=10)
+
+for tipo in ['fire', 'water', 'grass']:
+    cor = {'fire': 'red', 'water': 'blue', 'grass': 'green'}[tipo]
+    btn = tk.Button(janela, text=tipo.capitalize(), bg=cor, fg='white', width=20,
+                    command=lambda t=tipo: mostrar_geracoes(t))
+    btn.pack(pady=5)
