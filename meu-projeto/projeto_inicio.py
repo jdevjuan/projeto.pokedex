@@ -120,3 +120,7 @@ for tipo in ['fire', 'water', 'grass']:
     btn = tk.Button(janela, text=tipo.capitalize(), bg=cor, fg='white', width=20,
                     command=lambda t=tipo: mostrar_geracoes(t))
     btn.pack(pady=5)
+    #Botão "extra" no início :DAdd commentMore actions
+#Ideia nova pra esse código, ele parecia muito sem sal só com 3 coisas.
+botao_extra = tk.Button(janela, text="Extras", bg="#F4B400", fg="black", width=20, command=mostrar_extras)
+botao_extra.pack(pady=5)
