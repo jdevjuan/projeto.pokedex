@@ -124,3 +124,5 @@ for tipo in ['fire', 'water', 'grass']:
 #Ideia nova pra esse código, ele parecia muito sem sal só com 3 coisas.
 botao_extra = tk.Button(janela, text="Extras", bg="#F4B400", fg="black", width=20, command=mostrar_extras)
 botao_extra.pack(pady=5)
+
+janela.mainloop() 
